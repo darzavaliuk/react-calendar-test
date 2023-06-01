@@ -1,12 +1,13 @@
 import React from "react";
+import {Box, PopupBox} from "./Style/PopupStyle";
 
 const Popup = props => {
     return (
-        <div className="popup-box">
-            <div className="box">
+        <PopupBox>
+            <Box>
                 {props.content}
-            </div>
-        </div>
+            </Box>
+        </PopupBox>
     );
 };
 
