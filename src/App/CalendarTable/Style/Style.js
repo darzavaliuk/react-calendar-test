@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {format} from "date-fns";
 
 export const DeleteButton = styled.button`
   background-color: #dc3545;
@@ -38,9 +39,10 @@ export const Table = styled.table`
 `;
 
 export const THead = styled.thead`
-  padding: 2px 0;
+  padding: 5px 0;
   display: block;
   background: #f8f4f4;
+  font-size: 10px;
 `;
 
 export const TBody = styled.tbody`
@@ -66,6 +68,11 @@ export const IPhoneButton = styled.button`
     //background-color: #0066cc;
     cursor: pointer;
   }
+  &:first-child {
+    border-right: 1px solid #999999;;
+  }
+
+
 
   &:active {
     background-color: #0052b3;
@@ -76,6 +83,14 @@ export const IPhoneButton = styled.button`
 export const TR = styled.tr`
   width: 100%;
   display: flex;
+`;
+
+export const TRHead = styled.tr`
+  width: 100%;
+  display: flex;
+  font-size: 20px;
+  padding: 8px 0;
+  font-family: Telex;
 `;
 
 export const TD = styled.td`
@@ -89,9 +104,20 @@ export const TDD = styled.td`
   display: block;
   flex: 1;
     // ${({isRound}) => isRound && 'border-radius: 50%;'}
+  //max-width: 40px;
+  //border-radius: ;
+  //padding: 0 15px;
+  margin: 0 30px ;
   border-radius: ${({isToday}) => isToday ? '50%' : '0%'};
   background: ${({isToday}) => isToday ? 'red' : '#f8f4f4'};
   color: ${({isToday}) => isToday ? 'white' : 'black'};
+  &:first-of-type { 
+    //margin-right: 10px;
+  }
+
+  @media (max-width: 740px) {
+    margin: 0;
+  }
 `;
 
 export const TH = styled.th`
@@ -174,3 +200,4 @@ export const TableHeader = styled.thead`
 export const SpanMonthTitle = styled.span`
   font-family: Telex;
   font-size: 14px`
+
